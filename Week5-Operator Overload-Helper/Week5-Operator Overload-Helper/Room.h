@@ -7,7 +7,7 @@ namespace sdds {
 	{
 		// does private modifier required?
 		double  width, height, breadth;
-		bool checkDimensions(double, double, double);
+		bool checkDimensions(double, double, double) const;
 	public:
 		Room(); // safe empty state
 		// create no argument constructor 
@@ -16,6 +16,9 @@ namespace sdds {
 		//create constructor with room reference using &
 		Room(Room& r);
 		void init(); // for safe empty , called anywhere 
+
+		// Type casting constructor 
+		Room(int no);
 
 		// create set and get functions
 		void setWidth(double);
@@ -31,17 +34,17 @@ namespace sdds {
 		Room operator++(int);
 		bool operator<(Room r) const;
 		Room& operator+(const Room& room);
-
+		operator bool() const; // could be helper as well if need to return
 		//double calculateArea();
 		void display() const;
-
+		
 		//void deallocate();
 		// create safe empty and deallocate function to be called in constructor though better way would be to call argument constructor 
 		//~Room(); // deconstructor
 		// create calculateArea 
 		// create display
 		friend std::ostream& operator <<(std::ostream& stream, const Room& room);
-
+		friend char* toString(Room&);
 	};
 	
 	

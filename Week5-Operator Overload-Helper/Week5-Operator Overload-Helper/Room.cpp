@@ -14,6 +14,10 @@ namespace sdds {
 	Room::Room(Room& r) {
 		*this = r;
 	}
+
+	Room::Room(int no){
+		setRoom(no, no, no);
+		}
 	void Room::init() {
 		width = 10;
 		height = 10;
@@ -21,7 +25,7 @@ namespace sdds {
 	}
 
 	void Room::setRoom(double w, double h, double b) {
-
+		
 		if (checkDimensions(w, h, b)) {
 			setWidth(w);
 			setBreadth(b);
@@ -86,7 +90,7 @@ namespace sdds {
 	// binary operator overloaded
 	bool Room::operator<(Room r) const{
 		
-		return this->height < r.height&& this->width < r.width&& this->breadth < r.breadth;
+		return this->height < r.height && this->width < r.width&& this->breadth < r.breadth;
 	}
 	// binary operator + overloaded
 	Room& Room::operator+(const Room& room) {
@@ -96,17 +100,30 @@ namespace sdds {
 		return *this;
 	}
 	
-	bool Room::checkDimensions(double w, double h, double b) {
+	Room::operator bool() const {
+		return this->checkDimensions(this->getWidth(), this->getHeight(), this->getBreadth());
+	}
+	bool Room::checkDimensions(double w, double h, double b) const {
 		bool check = false;
 		if ((w > MIN_dimension) && (h > MIN_dimension) && (b > MIN_dimension)) {
 			check = true;
 		}
 		return check;
 	}
-
+	// friend operator using private members
 	ostream& operator<< (ostream& stream, const Room& room) {
-		stream << "Room(" << room.getWidth() << "," << room.getBreadth() << "," << room.getHeight() << ")" ;
+		stream << "Room(" << room.width << "," << room.breadth << "," << room.height << ")" ;
 		return stream;
+	}
+	bool operator == (Room& r1, Room& r2) {
+		bool check = false;
+		if (r1.getWidth() == r2.getWidth() && r1.getBreadth() == r2.getBreadth() && r1.getHeight() == r2.getHeight()) {
+			check = true;
+		}
+		return check;
+	}
+	char* toString(Room& r) {
+		// "width= xx, Breath=xxx, Height=xx"
 	}
 
 	//create constructor with room reference using &
