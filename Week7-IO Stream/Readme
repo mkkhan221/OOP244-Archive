@@ -1,0 +1,4 @@
+In read function string object is created to read text content from file till delimeter. string object function c_str() is used to get char * type from string that can then be used for setname() and setfileid()
+changes made in File constructors. calling constructor within another sometimes causes unexpected behaviour therefore using seperate fucntion for deep copy is better choice. One -arg constructor and 3-arg constructors merged by using defualt arguments.
+The file that is being read is csv format meaning field are comma seperated and ends with on new line. read() function calls operator >> which read one record at a time and returns back the file pointer back to read()and if it is not End Of File , another record is read. read() requires filename, file type array and no of records.
+some functions remains to be coded , as i will get time i will complete it.
