@@ -36,6 +36,11 @@ namespace sdds_printer {
 		std::cout << msg << std::endl;
 		return true;
 	}
+	bool Printer::print(const sdds::File& f) {
+		print("file printing");
+		f.display(std::cout);
+		return true;
+	}
 
 }
 using namespace sdds;
@@ -104,10 +109,15 @@ int main() {
 
 	ImageFile img, img1("imagefile.jpeg","001",200,"jpeg");
 	TextFile txtfile("textfile.txt", "1011", 20, "txt");
-	//img.setCompression("jpg");
+	File file1("paper", "004", 0);
+	img.set("mypic","1201",500,"jpg");
 	//img.displayAll();
-	img1.displayAll();
+	img1.display(cout);
 	txtfile.display(cout,"my message");
+	Printer p1;
+	p1.set("myprinter", 1103);
+	p1.display();
+	p1.print(txtfile);
 	return 0;
 
 

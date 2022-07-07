@@ -19,6 +19,7 @@ namespace sdds_printer {
 		void display();
 		bool print();
 		bool print(const char*);
+		bool print(const sdds::File&);
 		bool copy();
 
 	};
