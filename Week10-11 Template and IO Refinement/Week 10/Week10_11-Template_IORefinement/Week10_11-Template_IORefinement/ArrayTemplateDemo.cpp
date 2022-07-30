@@ -14,7 +14,7 @@ void prnArray(const Array<type>& d) {
     }
     cout << endl;
 }
-
+/*
 int main() {
     Array<double> D(5);
     Array<int> I(10);
@@ -38,3 +38,4 @@ int main() {
 
     return 0;
 }
+*/
