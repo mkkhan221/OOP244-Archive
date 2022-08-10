@@ -30,6 +30,7 @@
     <ClCompile Include="Debug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -44,5 +45,7 @@
     <ClInclude Include="Room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> 26e2fff28d647cdf4d2e6e9dfb9ab97625be6111
   </ItemGroup>
 </Project>

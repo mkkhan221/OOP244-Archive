@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="codingexample.cpp" />
     <ClCompile Include="Debug.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="Debug2.cpp" />
     <ClCompile Include="Debug3.cpp" />
     <ClCompile Include="Polymorphism.cpp" />
@@ -151,6 +152,12 @@
   <ItemGroup>
     <ClInclude Include="Room.h" />
   </ItemGroup>
+=======
+    <ClCompile Include="Polymorphism.cpp" />
+    <ClCompile Include="walk.cpp" />
+    <ClCompile Include="walk2.cpp" />
+  </ItemGroup>
+>>>>>>> 26e2fff28d647cdf4d2e6e9dfb9ab97625be6111
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
