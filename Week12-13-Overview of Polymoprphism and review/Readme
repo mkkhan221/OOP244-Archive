@@ -1,0 +1,3 @@
+In Room question , please check comments for object assigned to another object 
+for practice i suggest use arrays to check the behavior of assignment operator
+for debug3 , there can be another possible correction and that is if (P1.getAge() < P2.getAge()) that be correct too. 
